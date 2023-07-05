@@ -77,7 +77,7 @@ func main() {
 		log.Fatalw("No search query or index flag provided. Please provide a search query and/or the index flag.")
 	}
 
-	// If search query is provided, run the search and exit
+	// If search query is provided and index is not, run the search and exit
 	if searchQuery != "" && !index {
 		search(searchQuery)
 		return
@@ -88,7 +88,7 @@ func main() {
 	// Create a slice to hold all the file information
 	var files []FileInfo
 
-	// Walk through the directory, starting from the current directory (".")
+	// Walk through the specified directory recursively
 	err := filepath.Walk(directory, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			log.Errorw("Error encountered while walking through files. Are you sure the directory exists and is correct?",
@@ -97,7 +97,7 @@ func main() {
 			return err
 		}
 
-		// Exclude ".git" directory
+		// Exclude any ".git" directory
 		if strings.HasPrefix(info.Name(), ".git") {
 			if info.IsDir() {
 				return filepath.SkipDir // Skip the directory and all its subdirectories
