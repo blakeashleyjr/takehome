@@ -30,7 +30,7 @@ Which will output something like the following:
 *Search the index from the previous example for all json files:* <br>
 `./index-search -s json` <br>
 
-Which will out put something like the following: <br>
+Which will output something like the following: <br>
 ```
 [user1.json 16 application/octet-stream test_data/data/user1.json]
 [user2.json 17 application/octet-stream test_data/data/user2.json]
@@ -39,7 +39,7 @@ Which will out put something like the following: <br>
 *Combine the two previous examples into a single command:* <br>
 `./index-search -i -d test_data/ -s json`
 
-Which will out put something like the following: <br>
+Which will output something like the following: <br>
 ```
 {"level":"info","ts":1688587329.809959,"caller":"takehome/main.go:189","msg":"Successfully created index file","filename":"index.csv","fileCount":5}
 [user1.json 16 application/octet-stream test_data/data/user1.json]
