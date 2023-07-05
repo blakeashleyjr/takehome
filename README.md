@@ -22,7 +22,10 @@ You can explore the source code yourself in main.go. Test any changes with `go r
 *Index the test-data directory:* <br>
 `./index-search -i -d test_data/`
 
-Which will output something like the following: `"{"Successfully created index file","filename":"index.csv","fileCount":5}"` <br>
+Which will output something like the following: 
+```
+"{"Successfully created index file","filename":"index.csv","fileCount":5}"
+```
 
 *Search the index from the previous example for all json files:* <br>
 `./index-search -s json` <br>
